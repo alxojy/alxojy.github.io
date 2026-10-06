@@ -9,23 +9,22 @@ title = "Alex"
   # Leave avatar empty to show your initial, or drop a photo in static/images/ and set e.g. "images/me.jpg"
   avatar = ""
   # Optional "now" line under the about text. Delete to hide it.
-  now = "projecting [GRADE] · reading [BOOK]"
+  now = "projecting [V4] · navigating life"
   location = "Kuala Lumpur"
 
   [params.hero]
-    kicker = "hello, world"
-    title = "Hi, I'm Alex. I write software for a living, and about everything else here."
-    subtitle = "Mostly climbing, cats, and food around Kuala Lumpur. Slow posts, written when I have something worth saying."
+    kicker = "chalk · cats · commits"
+    title = "Hello, world"
+    subtitle = ""
 
   [params.about]
     title = "About me"
-    text = "I'm a software engineer based in KL. After work I'm usually at the bouldering gym, and at home I'm outnumbered by four cats. Weekends are for slow breakfasts and wandering around the city."
+    text = "I'm Alex, I write software for a living (or I used to?). Outside of work you'll usually find me on the wall. I have a slight addiction to plastic rocks. Butler to four amazing cats."
 
   # Fill in your profile URLs. Leave one empty ("") to hide it.
   [params.social]
-    linkedin = "https://www.linkedin.com/in/YOUR-HANDLE/"
-    instagram = "https://www.instagram.com/YOUR-HANDLE/"
-    github = "https://github.com/YOUR-HANDLE"
+    linkedin = "https://www.linkedin.com/in/alex-jy-ooi/"
+    github = "https://github.com/alxojy"
 
 [permalinks]
   posts = "/:year/:contentbasename/"
