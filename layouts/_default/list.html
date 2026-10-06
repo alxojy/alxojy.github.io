@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="posts list-page">
+  <div class="section-head">
+    <h1>{{ if eq .Kind "term" }}#{{ .Title | lower }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ partial "tag-filter.html" . }}
+  </div>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ if eq .Kind "taxonomy" }}
+    {{/* /tags/ index: list every tag */}}
+    <div class="post-list">
+      {{ range .Data.Terms.Alphabetical }}
+        <a class="post-row" href="{{ .Page.RelPermalink }}">
+          <span class="post-title">#{{ .Name }}</span>
+          <span class="post-tag">{{ .Count }} {{ cond (eq .Count 1) "post" "posts" }}</span>
+        </a>
+      {{ end }}
+    </div>
+  {{ else }}
+    {{ partial "post-list.html" .Pages }}
+  {{ end }}
+</section>
+{{ end }}

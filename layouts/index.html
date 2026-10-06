@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ $p := site.Params }}
+<section class="hero">
+  {{ with $p.hero.kicker }}<p class="kicker">{{ . }}</p>{{ end }}
+  <h1>{{ $p.hero.title }}</h1>
+  {{ with $p.hero.subtitle }}<p class="lede">{{ . }}</p>{{ end }}
+</section>
+
+<section id="about" class="card about" aria-labelledby="about-h">
+  {{ with $p.avatar }}
+    <img class="about-photo" src="{{ . | relURL }}" alt="Photo of {{ site.Title }}">
+  {{ else }}
+    <div class="about-photo placeholder" aria-hidden="true">{{ substr site.Title 0 1 }}</div>
+  {{ end }}
+  <div class="about-text">
+    <h2 id="about-h">{{ $p.about.title | default "About me" }}</h2>
+    {{ .RenderString (dict "display" "block") $p.about.text }}
+    {{ with $p.now }}<p class="now">now → {{ . }}</p>{{ end }}
+  </div>
+</section>
+
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<section id="posts" class="posts" aria-labelledby="posts-h">
+  <div class="section-head">
+    <h2 id="posts-h">Posts</h2>
+    {{ partial "tag-filter.html" . }}
+  </div>
+  {{ partial "post-list.html" $posts }}
+</section>
+{{ end }}

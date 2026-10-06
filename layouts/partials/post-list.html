@@ -1,0 +1,15 @@
+{{/* Expects a page collection as context. Renders posts grouped by year. */}}
+<div class="post-list">
+  {{ range .GroupByDate "2006" }}
+    <p class="year">{{ .Key }}</p>
+    {{ range .Pages }}
+      <a class="post-row" href="{{ .RelPermalink }}">
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time>
+        <span class="post-title">{{ .Title }}</span>
+        {{ with .Params.tags }}<span class="post-tag">#{{ index . 0 | lower }}</span>{{ end }}
+      </a>
+    {{ end }}
+  {{ else }}
+    <p class="empty">No posts yet. Soon.</p>
+  {{ end }}
+</div>

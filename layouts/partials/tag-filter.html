@@ -1,0 +1,11 @@
+{{/* Context: the current page. Highlights the active tag, or "all". */}}
+{{ $current := . }}
+{{ with site.Taxonomies.tags }}
+<nav class="tag-filter" aria-label="Filter posts by tag">
+  {{ $allActive := or $current.IsHome (eq $current.RelPermalink ("posts/" | relURL)) }}
+  <a href="{{ "posts/" | relURL }}" class="chip{{ if $allActive }} active{{ end }}">all</a>
+  {{ range .Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="chip{{ if eq $current.RelPermalink .Page.RelPermalink }} active{{ end }}">#{{ .Name }}</a>
+  {{ end }}
+</nav>
+{{ end }}

@@ -1,0 +1,40 @@
+# The deploy workflow overrides baseURL with your real GitHub Pages address,
+# so you only need to change this if you build somewhere else.
+baseURL = "https://example.github.io/"
+locale = "en"
+title = "Alex"
+
+[params]
+  description = "Alex writes software for a living, and about everything else here."
+  # Leave avatar empty to show your initial, or drop a photo in static/images/ and set e.g. "images/me.jpg"
+  avatar = ""
+  # Optional "now" line under the about text. Delete to hide it.
+  now = "projecting [GRADE] · reading [BOOK]"
+  location = "Kuala Lumpur"
+
+  [params.hero]
+    kicker = "hello, world"
+    title = "Hi, I'm Alex. I write software for a living, and about everything else here."
+    subtitle = "Mostly climbing, cats, and food around Kuala Lumpur. Slow posts, written when I have something worth saying."
+
+  [params.about]
+    title = "About me"
+    text = "I'm a software engineer based in KL. After work I'm usually at the bouldering gym, and at home I'm outnumbered by four cats. Weekends are for slow breakfasts and wandering around the city."
+
+  # Fill in your profile URLs. Leave one empty ("") to hide it.
+  [params.social]
+    linkedin = "https://www.linkedin.com/in/YOUR-HANDLE/"
+    instagram = "https://www.instagram.com/YOUR-HANDLE/"
+    github = "https://github.com/YOUR-HANDLE"
+
+[permalinks]
+  posts = "/:year/:contentbasename/"
+
+[taxonomies]
+  tag = "tags"
+
+[markup.highlight]
+  noClasses = false
+
+[outputs]
+  home = ["HTML", "RSS"]
