@@ -7,7 +7,7 @@ title = "Alex"
 [params]
   description = "Alex writes software for a living, and about everything else here."
   # Leave avatar empty to show your initial, or drop a photo in static/images/ and set e.g. "images/me.jpg"
-  avatar = ""
+  avatar = "images/me.jpg"
   # Optional "now" line under the about text. Delete to hide it.
   now = "projecting [V4] · navigating life"
   location = "Kuala Lumpur"
